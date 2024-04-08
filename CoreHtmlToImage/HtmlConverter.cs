@@ -103,11 +103,11 @@ namespace CoreHtmlToImage
 
             if (IsLocalPath(url))
             {
-                args = $"--quality {quality} --width {width} -f {imageFormat} \"{url}\" \"{filename}\"";
+                args = $"--quality {quality} --width {width} -f {imageFormat} --enable-local-file-access \"{url}\" \"{filename}\"";
             }
             else
             {
-                args = $"--quality {quality} --width {width} -f {imageFormat} {url} \"{filename}\"";
+                args = $"--quality {quality} --width {width} -f {imageFormat} --enable-local-file-access {url} \"{filename}\"";
             }
 
             Process process = Process.Start(new ProcessStartInfo(toolFilepath, args)
